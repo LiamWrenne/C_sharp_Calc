@@ -15,6 +15,7 @@ namespace Calc
             int inum2 = 0;
             int ianswer = 0;
             char cOption;
+            bool now = true;
             do
             {
                 Console.ForegroundColor = ConsoleColor.Green;
