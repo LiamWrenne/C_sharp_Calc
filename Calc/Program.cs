@@ -10,7 +10,6 @@ namespace Calc
     {
         static void Main(string[] args)
         {
-            
             int inum1 = 0;
             int inum2 = 0;
             int ianswer = 0;
@@ -51,7 +50,8 @@ namespace Calc
                 }
 
                 Console.WriteLine("The answer is " + ianswer);
-                Console.ReadLine();
+                Console.WriteLine("\n");
+
             }    while (now == true);
         }
     }
