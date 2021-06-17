@@ -35,7 +35,7 @@ namespace Calc
                 Console.WriteLine("Calculation Number: " + counter + "\n");
 
                 //main menu for choice of operations
-                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Power\nR is for Square root\nL is for last answer\nC is for Clear screen\nE is for Exit");
+                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Power\nR is for Square root\nG is for Percentage conversion\nL is for last answer\nC is for Clear screen\nE is for Exit");
 
                 //in order to avoid errors all input it made into uppercase 
                 cOption = char.Parse(Console.ReadLine());
@@ -89,6 +89,14 @@ namespace Calc
                         Console.WriteLine("What number do you want to Square root?");
                         inum3 = int.Parse(Console.ReadLine());
                         ianswer = Math.Sqrt(inum3);
+                        break;
+                    //if G is inputed it will convert a decimal value into a percentage by times 100
+                    case 'G':
+                        Console.WriteLine("What number do you want to convert into a percentage?");
+                        inum1 = double.Parse(Console.ReadLine());
+                        ianswer = inum1 * 100;
+                        Console.WriteLine("Your Percentage is: " + ianswer + "%\n");
+                        ans = false;
                         break;
                     //if L is inputed it will give the answer of the calulation of the input the user gave
                     case 'L':
