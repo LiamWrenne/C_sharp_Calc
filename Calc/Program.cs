@@ -16,13 +16,18 @@ namespace Calc
             double ianswer = 0;
             char cOption;
             bool now = true;
-            int counter = 1;
+            bool wow = true;
+            int counter = 0;
             List<double> mem = new List<double> { };
             do
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Square\nR is for Square root\nL is for last answer\nE is for Exit\nPlease choose menu option for operator");
+
+                counter = counter + 1;
+                Console.WriteLine("Calculation Number: " + counter + "\n");
+
+                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Square\nR is for Square root\nL is for last answer\nE is for Exit");
 
                 cOption = char.Parse(Console.ReadLine());
                 cOption = char.ToUpper(cOption);
@@ -69,7 +74,9 @@ namespace Calc
                         break;
                     case 'L':
                         Console.WriteLine("What Calculation number would you like to see? ");
-                        Console.WriteLine(mem[inum3]);
+                        Console.ReadLine();
+                        Console.WriteLine("\nThe answer you are looking for: " + mem[inum3] + "\n");
+                        wow = false;
                         break;
                     case 'E':
                         now = false;
@@ -78,12 +85,10 @@ namespace Calc
                         Console.WriteLine("Error try again");
                         break;
                 }
-                Console.WriteLine("\nThe answer is " + ianswer + "\n");
+                if (wow == true) Console.WriteLine("\nThe answer is " + ianswer + "\n");
 
                 mem.Add(ianswer);
 
-                counter = counter + 1;
-                Console.WriteLine("Calculation Number: " + counter + "\n");
             }    while (now == true);
         }
     }
