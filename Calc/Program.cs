@@ -35,13 +35,13 @@ namespace Calc
                 Console.WriteLine("Calculation Number: " + counter + "\n");
 
                 //main menu for choice of operations
-                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Square\nR is for Square root\nL is for last answer\nE is for Exit");
+                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Power\nR is for Square root\nL is for last answer\nC is for Clear screen\nE is for Exit");
 
                 //in order to avoid errors all input it made into uppercase 
                 cOption = char.Parse(Console.ReadLine());
                 cOption = char.ToUpper(cOption);
 
-                //switch case for the different operations including (+, -, *, /, Square, Square root, Memory, Exit and error handling)
+                //switch case for the different operations including (+, -, *, /, Square, Square root, Memory, Clear screen, Exit and error handling)
                 switch (cOption)
                 {
                     //if A is inputed it will add the two inputs
@@ -78,9 +78,11 @@ namespace Calc
                         break;
                     //if P is inputed it will square the input
                     case 'P':
-                        Console.WriteLine("What number do you want to Square?");
-                        inum3 = int.Parse(Console.ReadLine());
-                        ianswer = inum3 * inum3;
+                        Console.WriteLine("Value to Power");
+                        inum1 = double.Parse(Console.ReadLine());
+                        Console.WriteLine("Power to");
+                        inum2 = double.Parse(Console.ReadLine());
+                        ianswer = Math.Pow(inum1, inum2);
                         break;
                     //if R is inputed it will square root the input
                     case 'R':
@@ -98,6 +100,10 @@ namespace Calc
                     //if E is inputed it will quit the apllication
                     case 'E':
                         now = false;
+                        break;
+                    //if C is inputed it will clear the screen
+                    case 'C':
+                        Console.Clear();
                         break;
                     //if anything else is inputed it will give an error message
                     default:
