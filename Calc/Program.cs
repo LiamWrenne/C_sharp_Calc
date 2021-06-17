@@ -17,6 +17,7 @@ namespace Calc
             char cOption;
             bool now = true;
             int counter = 1;
+            List<double> mem = new List<double> { };
             do
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -68,9 +69,6 @@ namespace Calc
                         break;
                     case 'L':
                         Console.WriteLine("What Calculation number would you like to see? ");
-                        inum3 = int.Parse(Console.ReadLine());
-                        List<double> mem = new List<double> { };
-                        mem.Add(ianswer);
                         Console.WriteLine(mem[inum3]);
                         break;
                     case 'E':
@@ -81,6 +79,8 @@ namespace Calc
                         break;
                 }
                 Console.WriteLine("\nThe answer is " + ianswer + "\n");
+
+                mem.Add(ianswer);
 
                 counter = counter + 1;
                 Console.WriteLine("Calculation Number: " + counter + "\n");
