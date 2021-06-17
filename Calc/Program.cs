@@ -31,7 +31,7 @@ namespace Calc
                 Console.BackgroundColor = ConsoleColor.Black;
 
                 //counter to count how many calculations the user has made
-                counter = counter + 1;
+                counter += 1;
                 Console.WriteLine("Calculation Number: " + counter + "\n");
 
                 //main menu for choice of operations
