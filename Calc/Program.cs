@@ -20,7 +20,7 @@ namespace Calc
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Devision resulting in whole number answers!\nPlease choose menu option for operator");
+                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Devision\nL is for last answer\nE is for Exit\nPlease choose menu option for operator");
 
                 cOption = char.Parse(Console.ReadLine());
                 cOption = char.ToUpper(cOption);
@@ -44,19 +44,20 @@ namespace Calc
                     case 'D':
                         ianswer = inum1 / inum2;
                         break;
+                    case 'L':
+                        break;
+                    case 'E':
+                        now = false;
+                        break;
                     default:
-                        Console.WriteLine("\n");
                         Console.WriteLine("Error try again");
-                        Console.WriteLine("\n");
                         break;
                 }
-                Console.WriteLine("\n");
-                Console.WriteLine("The answer is " + ianswer);
-                Console.WriteLine("\n");
+
+                Console.WriteLine("\nThe answer is " + ianswer + "\n");
 
                 counter = counter + 1;
-                Console.WriteLine("Calculation Number: " + counter);
-                Console.WriteLine("\n");
+                Console.WriteLine("Calculation Number: " + counter + "\n");
             }    while (now == true);
         }
     }
