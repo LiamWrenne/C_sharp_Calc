@@ -35,7 +35,7 @@ namespace Calc
                 Console.WriteLine("Calculation Number: " + counter + "\n");
 
                 //main menu for choice of operations
-                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Power\nR is for Square root\nG is for Percentage conversion\nL is for last answer\nC is for Clear screen\nE is for Exit");
+                Console.WriteLine("Menu:\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Division\nP is for Power\nR is for Square Root\nG is for Percentage Conversion\nL is for Last Answer\nC is for Clear Screen\nE is for Exit");
 
                 //in order to avoid errors all input it made into uppercase 
                 cOption = char.Parse(Console.ReadLine());
@@ -92,9 +92,11 @@ namespace Calc
                         break;
                     //if G is inputed it will convert a decimal value into a percentage by times 100
                     case 'G':
-                        Console.WriteLine("What number do you want to convert into a percentage?");
+                        Console.WriteLine("What is your number?");
                         inum1 = double.Parse(Console.ReadLine());
-                        ianswer = inum1 * 100;
+                        Console.WriteLine("What number do you want to divide by?");
+                        inum2 = double.Parse(Console.ReadLine());
+                        ianswer = inum1 / inum2 * 100;
                         Console.WriteLine("Your Percentage is: " + ianswer + "%\n");
                         ans = false;
                         break;
@@ -107,15 +109,18 @@ namespace Calc
                         break;
                     //if E is inputed it will quit the apllication
                     case 'E':
+                        ans = false;
                         now = false;
                         break;
                     //if C is inputed it will clear the screen
                     case 'C':
                         Console.Clear();
+                        ans = false;
                         break;
                     //if anything else is inputed it will give an error message
                     default:
                         Console.WriteLine("Error try again");
+                        ans = false;
                         break;
                 }
                 //if statement to see if an answer is needed as an alternative to memory
