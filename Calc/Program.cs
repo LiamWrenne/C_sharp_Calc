@@ -10,28 +10,25 @@ namespace Calc
     {
         static void Main(string[] args)
         {
-            int inum1 = 0;
-            int inum2 = 0;
-            int ianswer = 0;
+            double inum1 = 0;
+            double inum2 = 0;
+            double ianswer = 0;
             char cOption;
             bool now = true;
+            int counter = 1;
             do
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.BackgroundColor = ConsoleColor.Black;
-                Console.WriteLine("Menu");
-                Console.WriteLine("A is for Addition");
-                Console.WriteLine("S is for Subtraction");
-                Console.WriteLine("M is for Multiplication");
-                Console.WriteLine("D is for Devision resulting in whole number answers!");
-                Console.WriteLine("Please choose menu option for operator");
+                Console.WriteLine("Menu\nA is for Addition\nS is for Subtraction\nM is for Multiplication\nD is for Devision resulting in whole number answers!\nPlease choose menu option for operator");
+
                 cOption = char.Parse(Console.ReadLine());
                 cOption = char.ToUpper(cOption);
 
                 Console.WriteLine("Please enter first number");
-                inum1 = int.Parse(Console.ReadLine());
+                inum1 = double.Parse(Console.ReadLine());
                 Console.WriteLine("Please enter second number");
-                inum2 = int.Parse(Console.ReadLine());
+                inum2 = double.Parse(Console.ReadLine());
 
                 switch (cOption)
                 {
@@ -53,10 +50,13 @@ namespace Calc
                         Console.WriteLine("\n");
                         break;
                 }
-
+                Console.WriteLine("\n");
                 Console.WriteLine("The answer is " + ianswer);
                 Console.WriteLine("\n");
 
+                counter = counter + 1;
+                Console.WriteLine("Calculation Number: " + counter);
+                Console.WriteLine("\n");
             }    while (now == true);
         }
     }
