@@ -47,6 +47,11 @@ namespace Calc
                     case 'D':
                         ianswer = inum1 / inum2;
                         break;
+                    default:
+                        Console.WriteLine("\n");
+                        Console.WriteLine("Error try again");
+                        Console.WriteLine("\n");
+                        break;
                 }
 
                 Console.WriteLine("The answer is " + ianswer);
